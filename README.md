@@ -30,10 +30,7 @@ In the high-stakes environment of Tier-1 banking, data anomalies—such as null 
 
 You can clone this repository directly to integrate into your financial ETL pipeline:
 
-```bash
-git clone [https://github.com/agattus/finreg-validator.git](https://github.com/agattus/finreg-validator.git)
-cd finreg-validator
-pip install pandas
+
 
 ## 💻 Usage Example
 

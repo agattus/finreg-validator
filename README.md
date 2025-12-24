@@ -35,20 +35,22 @@ git clone [https://github.com/agattus/finreg-validator.git](https://github.com/a
 cd finreg-validator
 pip install pandas
 
----
+## 💻 Usage Example
 
-##Usage
-* **Designed for integration into ETL pipelines:
+This library is designed to be dropped into existing Python-based Risk ETL workflows.
 
+```python
 from validator import FinRegValidator
 
-v = FinRegValidator('daily_trades.csv')
+# Initialize the validator with your raw trading data
+v = FinRegValidator('daily_trades_batch_01.csv')
+
+# Run the full suite of regulatory checks
 report = v.check_integrity()
+
+# Output the compliance report
 print(report)
 
----
-
-##Author
-* **Arun Kumar Gattu Sambaiah Assistant Vice President & Regulatory Architect
-
-Specializing in Financial Data Integrity & Compliance Automation.
+# Example Output:
+# "RISK FAIL: Found 5 negative values in NotionalAmount."
+# "COMPLIANCE FAIL: Found 12 trades with future dates."

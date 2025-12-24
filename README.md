@@ -29,7 +29,11 @@ In the high-stakes environment of Tier-1 banking, data anomalies—such as null 
 ## 🛠 Installation
 
 You can clone this repository directly to integrate into your financial ETL pipeline:
-
+```bash
+git clone [https://github.com/agattus/finreg-validator.git](https://github.com/agattus/finreg-validator.git)
+cd finreg-validator
+pip install pandas
+```
 
 
 ## 💻 Usage Example
@@ -51,3 +55,26 @@ print(report)
 # Example Output:
 # "RISK FAIL: Found 5 negative values in NotionalAmount."
 # "COMPLIANCE FAIL: Found 12 trades with future dates."
+
+📊 Business Use Case
+The Problem
+Financial institutions process millions of transactions daily. Legacy systems often allow "dirty data" (e.g., a trade date of 2099-01-01) to pass through to the reporting layer. When this data reaches the Federal Reserve or regulators, it causes:
+
+Audit Failures (MRA/MRIA).
+
+Capital Surcharges due to inability to calculate risk accurately.
+
+Operational Waste (manual remediation by analysts).
+
+The Solution
+FinReg-Validator shifts data quality "left"—catching errors at the source (Ingestion) rather than the destination (Reporting). This reduces the risk of regulatory penalties and streamlines the CCAR submission lifecycle.
+
+👤 Author & Maintainer
+Arun Kumar Gattu Sambaiah Assistant Vice President & Regulatory Architect Specializing in Financial Data Integrity, CCAR, and Compliance Automation.
+
+Connect on LinkedIn
+
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Disclaimer: This tool is an independent open-source utility and is not directly affiliated with the Federal Reserve or any specific financial institution.

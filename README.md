@@ -34,7 +34,27 @@ git clone [https://github.com/agattus/finreg-validator.git](https://github.com/a
 cd finreg-validator
 pip install pandas
 ```
+Want to see the validation logic in action? We have included a demo script that generates a "dirty" trading dataset (with intentional regulatory errors) and runs the firewall against it.
 
+Run the demo with a single command:
+```bash
+python run_demo.py
+```
+What this does:
+
+### 1. Generates a sample CSV file (regulatory_batch_sample.csv) containing:
+
+✅ Valid trades
+
+❌ Future-dated trades (CCAR Violation)
+
+❌ Negative Notional amounts (Basel III Violation)
+
+❌ Missing ISINs (Data Quality Failure)
+
+### 2. Runs the FinRegValidator engine.
+
+### 3. Outputs a pass/fail compliance report to your terminal.
 
 ## 💻 Usage Example
 
